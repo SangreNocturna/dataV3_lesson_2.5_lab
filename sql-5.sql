@@ -15,7 +15,7 @@ SELECT AVG(length)%60 FROM sakila.film;
 SELECT concat(floor((AVG(length))/60),":",round((AVG(length))%60,0)) AS "average_length" FROM sakila.film;
 
 -- 5. How many distinct (different) actors' last names are there?
- select distinct last_name from sakila.actor;
+ select count(distinct last_name) from sakila.actor;
  
  -- 6. Since how many days has the company been operating (check DATEDIFF() function)?
 SELECT DATEDIFF ((MAX(rental_date)), (MIN(rental_date))) as 'operative_time(days)' FROM sakila.rental; 
